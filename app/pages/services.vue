@@ -14,7 +14,7 @@ const features = [
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative py-24 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-primary/10">
+    <section class="relative py-32 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-primary/10">
       <div class="absolute inset-0 bg-pattern-dots opacity-30" />
       <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 blob" />
 
@@ -32,22 +32,20 @@ const features = [
     </section>
 
     <!-- Services -->
-    <section class="py-24">
+    <section class="py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="space-y-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ServicesServiceCard
-            v-for="(service, index) in services"
+            v-for="service in services"
             :key="service.id"
             :service="service"
-            :index="index"
           />
         </div>
       </div>
     </section>
 
     <!-- Why choose us -->
-    <section class="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden">
-      <div class="absolute inset-0 bg-pattern-grid opacity-5" />
+    <section class="relative py-32 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden">
       <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,38 +76,16 @@ const features = [
     </section>
 
     <!-- CTA -->
-    <section class="relative py-24 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5" />
-      <div class="absolute inset-0 bg-pattern-diagonal opacity-50" />
-
-      <div class="relative max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold mb-4">
-          Få et <span class="text-gradient">uforpligtende</span> tilbud
-        </h2>
-        <p class="text-lg text-muted mb-8 max-w-xl mx-auto">
-          Kontakt os i dag, så finder vi den bedste løsning til dine behov.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <UButton
-            to="/kontakt"
-            size="xl"
-            trailing-icon="i-lucide-arrow-right"
-            class="shadow-lg shadow-primary/20"
-          >
-            Kontakt os
-          </UButton>
-          <UButton
-            to="tel:+4540829240"
-            size="xl"
-            color="neutral"
-            variant="outline"
-            icon="i-lucide-phone"
-          >
-            Ring 40 82 92 40
-          </UButton>
-        </div>
-      </div>
-    </section>
+    <UPageSection class="bg-primary/5">
+      <UPageCTA
+        title="Få et uforpligtende tilbud"
+        description="Kontakt os i dag, så finder vi den bedste løsning til dine behov."
+        :links="[{
+          label: 'Kontakt os',
+          to: '/kontakt',
+          trailingIcon: 'i-lucide-arrow-right'
+        }]"
+      />
+    </UPageSection>
   </div>
 </template>

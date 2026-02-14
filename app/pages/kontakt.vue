@@ -37,10 +37,23 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
 <template>
   <div>
-    <UPageHero
-      title="Kontakt Os"
-      description="Har du spørgsmål eller ønsker et tilbud? Udfyld formularen, eller kontakt os direkte."
-    />
+    <!-- Hero Section -->
+    <section class="relative py-32 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <div class="absolute inset-0 bg-pattern-dots opacity-30" />
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 blob" />
+
+      <div class="relative max-w-4xl mx-auto px-4 text-center">
+        <span class="inline-block px-4 py-1.5 mb-4 text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 rounded-full">
+          Vi er klar til at hjælpe
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Kontakt <span class="text-gradient">Os</span>
+        </h1>
+        <p class="text-xl text-muted max-w-2xl mx-auto">
+          Har du spørgsmål eller ønsker et tilbud? Udfyld formularen, eller kontakt os direkte.
+        </p>
+      </div>
+    </section>
 
     <UPageSection>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">

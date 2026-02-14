@@ -3,7 +3,7 @@ const { data: services } = await useServices()
 </script>
 
 <template>
-  <section class="relative py-24 bg-gradient-section overflow-hidden">
+  <section class="relative py-32 bg-gradient-section overflow-hidden">
     <!-- Background pattern -->
     <div class="absolute inset-0 bg-pattern-dots opacity-30" />
 

@@ -1,8 +1,8 @@
 <template>
-  <section class="relative py-24 overflow-hidden">
+  <section class="relative py-32 overflow-hidden">
     <!-- Background with pattern -->
     <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
-    <div class="absolute inset-0 bg-pattern-grid opacity-50" />
+    <div class="absolute inset-0 bg-pattern-dots opacity-30" />
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

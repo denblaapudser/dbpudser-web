@@ -3,30 +3,18 @@
 
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
-
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
 }
 
 /* Background patterns */
 .bg-pattern-dots {
-  background-image: radial-gradient(circle, var(--color-green-200) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--color-cyan-200) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .bg-pattern-grid {
   background-image:
-    linear-gradient(to right, var(--color-green-100) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-green-100) 1px, transparent 1px);
+    linear-gradient(to right, var(--color-cyan-100) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-cyan-100) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -35,26 +23,26 @@
     45deg,
     transparent,
     transparent 10px,
-    var(--color-green-50) 10px,
-    var(--color-green-50) 20px
+    var(--color-cyan-50) 10px,
+    var(--color-cyan-50) 20px
   );
 }
 
 /* Gradient backgrounds */
 .bg-gradient-hero {
-  background: linear-gradient(135deg, var(--color-green-900) 0%, var(--color-green-700) 50%, var(--color-green-800) 100%);
+  background: linear-gradient(135deg, var(--color-cyan-900) 0%, var(--color-cyan-700) 50%, var(--color-cyan-800) 100%);
 }
 
 .bg-gradient-section {
-  background: linear-gradient(180deg, var(--color-green-50) 0%, white 100%);
+  background: linear-gradient(180deg, var(--color-cyan-50) 0%, white 100%);
 }
 
 .bg-gradient-section-alt {
-  background: linear-gradient(180deg, white 0%, var(--color-green-50) 50%, white 100%);
+  background: linear-gradient(180deg, white 0%, var(--color-cyan-50) 50%, white 100%);
 }
 
 .bg-gradient-cta {
-  background: linear-gradient(135deg, var(--color-green-600) 0%, var(--color-green-700) 100%);
+  background: linear-gradient(135deg, var(--color-cyan-600) 0%, var(--color-cyan-700) 100%);
 }
 
 /* Glassmorphism effect */
@@ -76,7 +64,7 @@
 
 /* Icon container with gradient */
 .icon-gradient {
-  background: linear-gradient(135deg, var(--color-green-400) 0%, var(--color-green-600) 100%);
+  background: linear-gradient(135deg, var(--color-cyan-400) 0%, var(--color-cyan-600) 100%);
   color: white;
 }
 
@@ -92,7 +80,7 @@
   position: absolute;
   inset: -2px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--color-green-400), var(--color-green-600), var(--color-green-400));
+  background: linear-gradient(135deg, var(--color-cyan-400), var(--color-cyan-600), var(--color-cyan-400));
   z-index: -1;
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
@@ -105,7 +93,7 @@
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-green-500) 0%, var(--color-green-700) 100%);
+  background: linear-gradient(135deg, var(--color-cyan-500) 0%, var(--color-cyan-700) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

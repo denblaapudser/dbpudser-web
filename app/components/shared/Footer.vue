@@ -15,13 +15,10 @@ const links = [
     <ReferencesLogoMarquee />
 
     <!-- Main footer -->
-    <div class="relative bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden">
-      <!-- Background pattern -->
-      <div class="absolute inset-0 bg-pattern-grid opacity-5" />
-
+    <div class="relative bg-gradient-to-b from-neutral-900 to-neutral-950 text-white overflow-hidden">
       <!-- Gradient orbs -->
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-slate-400/10 rounded-full blur-3xl" />
+      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-slate-400/5 rounded-full blur-3xl" />
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">

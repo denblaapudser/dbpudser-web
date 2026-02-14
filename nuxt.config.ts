@@ -12,10 +12,18 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/om-os': { prerender: true },
+    '/services': { prerender: true },
+    '/kontakt': { prerender: true }
   },
 
   compatibilityDate: '2025-01-15',
+
+  colorMode: {
+    preference: 'light',
+    fallback: 'light'
+  },
 
   eslint: {
     config: {

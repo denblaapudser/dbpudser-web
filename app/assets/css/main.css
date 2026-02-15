@@ -17,15 +17,13 @@
   --color-green-950: #052E16;
 }
 
-.hero-fade {
+.scroll-reveal {
   opacity: 0;
   transform: translateY(16px);
-  animation: heroFadeUp 0.7s ease-out forwards;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-@keyframes heroFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -11,11 +11,11 @@ const benefits = [
     <div
       v-for="(benefit, index) in benefits"
       :key="benefit.label"
-      class="flex items-center gap-2 text-sm text-white/50"
+      class="flex items-center gap-2 text-sm text-slate-400"
     >
-      <UIcon :name="benefit.icon" class="size-4 text-cyan-400/60" />
+      <UIcon :name="benefit.icon" class="size-4 text-cyan-500" />
       <span>{{ benefit.label }}</span>
-      <span v-if="index < benefits.length - 1" class="ml-4 hidden text-white/15 sm:inline">&bull;</span>
+      <span v-if="index < benefits.length - 1" class="ml-4 hidden text-slate-300 sm:inline">&bull;</span>
     </div>
   </div>
 </template>

@@ -25,7 +25,7 @@ const items = [
 <template>
   <UHeader
     :class="[
-        {'h-25 dark bg-transparent border-none backdrop-filter-none': !scrolled },
+        {'dark h-25 bg-transparent border-none backdrop-filter-none': !scrolled },
         {'bg-white/90 backdrop-blur-sm shadow-md': scrolled }
     ]"
     :ui="{ root: 'transition-all duration-300' }"
@@ -33,7 +33,6 @@ const items = [
     <template #title>
       <span
         class="font-bold text-2xl transition-colors duration-300"
-        :class="!scrolled ? 'text-white!' : ''"
       >
         DBPUDSER
       </span>
@@ -50,7 +49,3 @@ const items = [
     </template>
   </UHeader>
 </template>
-
-<style>
-
-</style>

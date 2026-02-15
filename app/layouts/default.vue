@@ -1,0 +1,4 @@
+<template>
+    <SharedHeader />
+    <slot />
+</template>

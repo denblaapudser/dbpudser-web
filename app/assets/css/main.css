@@ -16,3 +16,16 @@
   --color-green-900: #0A5331;
   --color-green-950: #052E16;
 }
+
+.hero-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroFadeUp 0.7s ease-out forwards;
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

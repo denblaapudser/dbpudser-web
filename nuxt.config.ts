@@ -11,8 +11,15 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  routeRules: {
-    '/': { prerender: true }
+  ui: {
+    colorMode: false
+  },
+
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
   },
 
   compatibilityDate: '2025-01-15',

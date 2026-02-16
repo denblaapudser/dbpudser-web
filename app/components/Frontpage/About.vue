@@ -19,7 +19,7 @@ const benefits = [
 <template>
   <section
     id="about"
-    class="relative overflow-hidden bg-white py-24 lg:py-60 z-10 shadow-[0_-20px_40px_-10px_rgba(0,0,0,0.15),0_20px_40px_-10px_rgba(0,0,0,0.15)] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[linear-gradient(to_right,transparent,var(--color-primary-500),transparent)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[linear-gradient(to_right,transparent,var(--color-primary-500),transparent)]"
+    class="relative overflow-hidden bg-white py-24 px-32 lg:py-60 z-10 shadow-[0_-20px_40px_-10px_rgba(0,0,0,0.15),0_20px_40px_-10px_rgba(0,0,0,0.15)] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[linear-gradient(to_right,transparent,var(--color-primary-500),transparent)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[linear-gradient(to_right,transparent,var(--color-primary-500),transparent)]"
   >
 
     <div class="relative mx-auto max-w-(--ui-container) px-6 lg:px-8">

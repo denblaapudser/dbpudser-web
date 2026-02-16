@@ -6,7 +6,7 @@ const videoOpen = ref(false)
 
 <template>
   <section
-    class="relative h-dvh min-h-[600px] overflow-hidden bg-white -mt-25"
+    class="relative h-dvh min-h-[600px] overflow-hidden bg-white -mt-25 xl:px-32"
   >
     <!-- Background Video -->
     <video
@@ -38,6 +38,9 @@ const videoOpen = ref(false)
         </div>
       </div>
     </div>
+
+    <!-- Video Modal -->
+    <FrontpageHeroVideoModal v-model:open="videoOpen" />
 
     <!-- Scroll Indicator -->
     <div

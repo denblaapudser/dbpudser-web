@@ -21,7 +21,7 @@ watch(open, (isOpen) => {
     v-model:open="open"
     fullscreen
     title="DBPUDSER intro video"
-    :ui="{ content: 'bg-black ring-0 shadow-none' }"
+    :ui="{ content: 'bg-transparent ring-0 shadow-none backdrop-blur-sm', overlay: 'bg-black/80 backdrop-blur-sm' }"
   >
     <slot />
 

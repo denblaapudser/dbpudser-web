@@ -38,7 +38,7 @@ const services = [
 <template>
   <section
     id="services"
-    class="relative overflow-hidden bg-slate-100 py-24 lg:py-62"
+    class="relative overflow-hidden bg-slate-100 py-24 lg:py-62 sm:px-10 xl:px-32"
   >
     <div class="relative mx-auto max-w-(--ui-container) px-6 lg:px-8">
       <!-- Header -->
@@ -74,41 +74,57 @@ const services = [
           :items="services"
           loop
           arrows
-          :autoplay="{ delay: 4000 }"
+          wheel-gestures
+          align="start"
+          :autoplay="{ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: false }"
           :ui="{
-            item: 'basis-full md:basis-1/2 lg:basis-1/3',
+            item: 'basis-full md:basis-1/2 lg:basis-1/3 h-auto py-8',
+            container: 'items-stretch',
+            prev: '-left-4 sm:-start-13',
+            next: '-right-4 sm:-end-13'
           }"
         >
           <NuxtLink
             :to="item.to"
-            class="group relative mx-3 overflow-hidden rounded-2xl bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl block h-full"
+            class="group relative mx-5 sm:mx-0 overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl block h-full"
           >
+            <!-- Background image -->
+            <img
+              src="/img/windowcleaner.jpg"
+              alt=""
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-gray-950/30 transition-opacity duration-300 group-hover:opacity-90" />
+
             <!-- Hover accent -->
-            <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100" />
+            <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-cyan-400 transition-transform duration-300 group-hover:scale-x-100" />
 
-            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-50 transition-colors duration-300 group-hover:bg-cyan-500">
-              <UIcon :name="item.icon" class="size-7 text-cyan-600 transition-colors duration-300 group-hover:text-white" />
+            <!-- Content -->
+            <div class="relative p-8">
+              <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-colors duration-300 group-hover:bg-cyan-500">
+                <UIcon :name="item.icon" class="size-7 text-white" />
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-white">
+                {{ item.title }}
+              </h3>
+
+              <p class="mb-6 text-sm leading-relaxed text-gray-300">
+                {{ item.description }}
+              </p>
+
+              <span class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-all duration-300 group-hover:gap-3">
+                Læs mere
+                <UIcon name="i-lucide-arrow-right" class="size-4" />
+              </span>
             </div>
-
-            <h3 class="mb-3 text-xl font-bold text-gray-900">
-              {{ item.title }}
-            </h3>
-
-            <p class="mb-6 text-sm leading-relaxed text-gray-500">
-              {{ item.description }}
-            </p>
-
-            <span class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition-all duration-300 group-hover:gap-3">
-              Læs mere
-              <UIcon name="i-lucide-arrow-right" class="size-4" />
-            </span>
           </NuxtLink>
         </UCarousel>
       </div>
 
       <!-- CTA -->
       <div class="scroll-reveal mt-12 text-center" style="transition-delay: 0.5s">
-        <UButton size="lg" color="primary" trailing-icon="i-lucide-arrow-right">
+        <UButton size="xl" color="primary" trailing-icon="i-lucide-arrow-right">
           Se alle tjenester
         </UButton>
       </div>

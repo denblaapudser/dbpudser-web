@@ -40,18 +40,21 @@ const columns: FooterColumn[] = [
     <UPageSection
       :ui="{
         root: 'bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)]',
-        container: 'py-24 lg:py-52',
+        container: 'py-24 lg:py-45',
         header: 'max-w-3xl mx-auto'
       }"
     >
       <template #headline>
-        <div class="scroll-reveal flex items-center justify-center gap-3" style="transition-delay: 0.1s">
-          <span class="h-px w-8 bg-cyan-400" />
-          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
-            Gratis tilbud
-          </span>
-          <span class="h-px w-8 bg-cyan-400" />
-        </div>
+        <USeparator
+          class="scroll-reveal flex items-center justify-center gap-3"
+          style="transition-delay: 0.1s"
+          color="primary"
+          label="Gratis tilbud"
+          :ui="{
+            border: 'w-8',
+            label: 'text-xs font-semibold uppercase tracking-[0.2em]'
+          }"
+        />
       </template>
 
       <template #title>

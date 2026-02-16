@@ -23,17 +23,20 @@ const references = [
     id="references"
     :ui="{
       root: 'bg-slate-100 overflow-hidden py-0',
-      container: 'py-24 lg:py-62'
+      container: 'py-24 lg:py-45'
     }"
   >
     <template #headline>
-      <div class="scroll-reveal flex items-center justify-center gap-3" style="transition-delay: 0.1s">
-        <span class="h-px w-8 bg-cyan-500" />
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600">
-          Referencer
-        </span>
-        <span class="h-px w-8 bg-cyan-500" />
-      </div>
+      <USeparator
+        class="scroll-reveal flex items-center justify-center gap-3"
+        style="transition-delay: 0.1s"
+        color="primary"
+        label="Referencer"
+        :ui="{
+          border: 'w-8',
+          label: 'text-xs font-semibold uppercase tracking-[0.2em]'
+        }"
+      />
     </template>
 
     <template #title>
@@ -45,7 +48,7 @@ const references = [
 
     <template #description>
         <div class="scroll-reveal" style="transition-delay: 0.3s">
-          <UMarquee :repeat="6" :overlay="false" :ui="{ root: '[--duration:50s] py-22 max-w-screen' }">
+          <UMarquee :repeat="6" :overlay="false" :ui="{ root: '[--duration:50s] py-12 max-w-screen' }">
             <img
               v-for="ref in references"
               :key="ref.src"

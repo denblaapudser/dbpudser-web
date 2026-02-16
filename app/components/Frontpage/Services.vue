@@ -45,13 +45,16 @@ const services = [
     }"
   >
     <template #headline>
-      <div class="scroll-reveal flex items-center justify-center gap-3" style="transition-delay: 0.1s">
-        <span class="h-px w-8 bg-cyan-500" />
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600">
-          Vores tjenester
-        </span>
-        <span class="h-px w-8 bg-cyan-500" />
-      </div>
+      <USeparator
+        class="scroll-reveal flex items-center justify-center gap-3"
+        style="transition-delay: 0.1s"
+        color="primary"
+        label="Vores tjenester"
+        :ui="{
+          border: 'w-8',
+          label: 'text-xs font-semibold uppercase tracking-[0.2em] text-primary '
+        }"
+      />
     </template>
 
     <template #title>
@@ -105,10 +108,9 @@ const services = [
               <p class="mb-6 text-sm leading-relaxed text-gray-300">
                 {{ item.description }}
               </p>
-              <span class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-all duration-300 group-hover:gap-3">
+              <UButton as="span" variant="link" color="primary" trailing-icon="i-lucide-arrow-right" class="text-cyan-400!">
                 Læs mere
-                <UIcon name="i-lucide-arrow-right" class="size-4" />
-              </span>
+              </UButton>
             </div>
           </NuxtLink>
         </UCarousel>

@@ -80,7 +80,7 @@ const columns: FooterColumn[] = [
     </div>
 
     <!-- Divider -->
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-(--ui-container) px-6 lg:px-8">
       <div class="h-px bg-white/10" />
     </div>
 
@@ -104,10 +104,10 @@ const columns: FooterColumn[] = [
     </div>
 
     <!-- Bottom bar -->
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-(--ui-container) px-6 lg:px-8">
       <div class="h-px bg-white/10" />
     </div>
-    <div class="flex items-center justify-between px-6 py-6 mx-auto max-w-7xl lg:px-8">
+    <div class="flex items-center justify-between px-6 py-6 mx-auto max-w-(--ui-container) lg:px-8">
       <p class="text-sm text-gray-500">
         &copy; {{ new Date().getFullYear() }} DBPUDSER. Alle rettigheder forbeholdes.
       </p>

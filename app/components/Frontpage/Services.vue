@@ -40,7 +40,7 @@ const services = [
     id="services"
     class="relative overflow-hidden bg-slate-100 py-24 lg:py-62"
   >
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="relative mx-auto max-w-(--ui-container) px-6 lg:px-8">
       <!-- Header -->
       <div class="mx-auto mb-16 max-w-2xl text-center">
         <div class="scroll-reveal mb-6 flex items-center justify-center gap-3" style="transition-delay: 0.1s">

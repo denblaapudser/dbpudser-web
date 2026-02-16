@@ -24,7 +24,7 @@ const videoOpen = ref(false)
 
     <!-- Content -->
     <div class="relative z-10 flex h-full items-center">
-      <div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto w-full max-w-(--ui-container) px-6 lg:px-8">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-8">
           <FrontpageHeroContent v-model:video-open="videoOpen" />
 

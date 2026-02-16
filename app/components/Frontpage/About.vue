@@ -22,7 +22,7 @@ const benefits = [
     class="relative overflow-hidden bg-white py-24 lg:py-60 z-10 shadow-[0_-20px_40px_-10px_rgba(0,0,0,0.15),0_20px_40px_-10px_rgba(0,0,0,0.15)] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[linear-gradient(to_right,transparent,var(--color-primary-500),transparent)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[linear-gradient(to_right,transparent,var(--color-primary-500),transparent)]"
   >
 
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="relative mx-auto max-w-(--ui-container) px-6 lg:px-8">
       <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
         <!-- Image side -->
         <div class="scroll-reveal relative" style="transition-delay: 0.1s">

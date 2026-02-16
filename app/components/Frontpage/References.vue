@@ -24,7 +24,7 @@ const references = [
     class="relative overflow-hidden bg-slate-100 py-24 lg:py-62"
   >
     <!-- Header -->
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-12 text-center">
+    <div class="mx-auto max-w-(--ui-container) px-6 lg:px-8 mb-12 text-center">
       <div class="scroll-reveal mb-4 flex items-center justify-center gap-3" style="transition-delay: 0.1s">
         <span class="h-px w-8 bg-cyan-500" />
         <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600">

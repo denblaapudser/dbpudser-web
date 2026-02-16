@@ -36,7 +36,10 @@ const services = [
 </script>
 
 <template>
-  <section id="services" class="relative overflow-hidden bg-slate-100 py-24 lg:py-62">
+  <section
+    id="services"
+    class="relative overflow-hidden bg-slate-100 py-24 lg:py-62"
+  >
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Header -->
       <div class="mx-auto mb-16 max-w-2xl text-center">

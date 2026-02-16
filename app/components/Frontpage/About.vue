@@ -17,10 +17,11 @@ const benefits = [
 </script>
 
 <template>
-  <section id="about" class="relative overflow-hidden bg-white py-24 lg:py-60">
-    <!-- Subtle warm accent -->
-    <div class="absolute -top-60 right-0 h-[800px] w-[800px] rounded-full bg-cyan-50/80 blur-3xl" />
-    <div class="absolute -bottom-60 left-0 h-[800px] w-[800px] rounded-full bg-cyan-700/10 blur-3xl" />
+  <section
+    id="about"
+    class="relative overflow-hidden bg-white py-24 lg:py-60 border-y-1 border-primary z-10"
+    style="box-shadow: 0 -20px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 40px -10px rgba(0, 0, 0, 0.15)"
+  >
 
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">

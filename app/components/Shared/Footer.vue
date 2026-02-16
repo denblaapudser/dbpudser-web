@@ -37,7 +37,7 @@ const columns: FooterColumn[] = [
 <template>
   <footer class="dark bg-gray-950">
     <!-- CTA -->
-    <div class="relative py-24 lg:py-32" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%)"
+    <div class="relative py-24 lg:py-52" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%)"
     >
 
       <div class="relative mx-auto max-w-3xl px-6 text-center lg:px-8">

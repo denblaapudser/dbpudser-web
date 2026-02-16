@@ -21,7 +21,7 @@ const references = [
 <template>
   <section
     id="references"
-    class="relative overflow-hidden bg-slate-100 py-24 lg:py-32"
+    class="relative overflow-hidden bg-slate-100 py-24 lg:py-62"
   >
     <!-- Header -->
     <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-12 text-center">

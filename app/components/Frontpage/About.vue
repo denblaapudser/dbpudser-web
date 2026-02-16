@@ -19,8 +19,7 @@ const benefits = [
 <template>
   <section
     id="about"
-    class="relative overflow-hidden bg-white py-24 lg:py-60 border-y-1 border-primary z-10"
-    style="box-shadow: 0 -20px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 40px -10px rgba(0, 0, 0, 0.15)"
+    class="relative overflow-hidden bg-white py-24 lg:py-60 border-y-1 border-primary z-10 shadow-[0_-20px_40px_-10px_rgba(0,0,0,0.15),0_20px_40px_-10px_rgba(0,0,0,0.15)]"
   >
 
     <div class="relative mx-auto max-w-7xl px-6 lg:px-8">

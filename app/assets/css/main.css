@@ -17,6 +17,9 @@
   --color-green-950: #052E16;
 }
 
+button {
+  cursor: pointer;
+}
 .scroll-reveal {
   opacity: 0;
   transform: translateY(16px);

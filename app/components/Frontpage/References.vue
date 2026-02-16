@@ -21,7 +21,7 @@ const references = [
 <template>
   <section
     id="references"
-    class="relative overflow-hidden bg-slate-100 py-24 lg:py-62"
+    class="relative overflow-hidden bg-slate-100 py-24 lg:py-82"
   >
     <!-- Header -->
     <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-12 text-center">
@@ -44,7 +44,7 @@ const references = [
 
     <!-- Full-width marquee -->
     <div class="scroll-reveal" style="transition-delay: 0.3s">
-      <UMarquee :repeat="6" :overlay="false" pause-on-hover :ui="{ root: '[--duration:50s]' }">
+      <UMarquee :repeat="6" :overlay="false" :ui="{ root: '[--duration:50s] py-22' }">
         <img
           v-for="ref in references"
           :key="ref.src"
@@ -53,6 +53,14 @@ const references = [
           class="h-42 w-auto shrink-0 object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
         >
       </UMarquee>
+      <UButton
+        style="transition-delay: 0.6s"
+        class="scroll-reveal mt-12 mx-auto block"
+        variant="link"
+        color="neutral"
+      >
+        Skal din virksomhed være vores næste reference? Kontakt os i dag for en uforpligtende snak!
+    </UButton>
     </div>
   </section>
 </template>

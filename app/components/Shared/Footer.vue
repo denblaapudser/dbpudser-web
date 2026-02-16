@@ -37,34 +37,38 @@ const columns: FooterColumn[] = [
 <template>
   <footer class="dark bg-gray-950">
     <!-- CTA -->
-    <div class="relative py-24 lg:py-52 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)]"
+    <UPageSection
+      :ui="{
+        root: 'bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)]',
+        container: 'py-24 lg:py-52',
+        header: 'max-w-3xl mx-auto'
+      }"
     >
-
-      <div class="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
-        <div class="scroll-reveal mb-6 flex items-center justify-center gap-3" style="transition-delay: 0.1s">
+      <template #headline>
+        <div class="scroll-reveal flex items-center justify-center gap-3" style="transition-delay: 0.1s">
           <span class="h-px w-8 bg-cyan-400" />
           <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
             Gratis tilbud
           </span>
           <span class="h-px w-8 bg-cyan-400" />
         </div>
+      </template>
 
-        <h2
-          class="scroll-reveal mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-          style="transition-delay: 0.2s"
-        >
+      <template #title>
+        <span class="scroll-reveal block" style="transition-delay: 0.2s">
           Klar til et
           <span class="text-cyan-400">krystalklart</span>
           resultat?
-        </h2>
+        </span>
+      </template>
 
-        <p
-          class="scroll-reveal mx-auto mb-10 max-w-xl text-lg leading-relaxed text-gray-400"
-          style="transition-delay: 0.3s"
-        >
+      <template #description>
+        <span class="scroll-reveal block mx-auto max-w-xl" style="transition-delay: 0.3s">
           Kontakt os i dag for en uforpligtende snak og et gratis tilbud. Vi dækker Fyn, Trekantområdet og dele af København.
-        </p>
+        </span>
+      </template>
 
+      <template #links>
         <div
           class="scroll-reveal flex flex-col items-center justify-center gap-4 sm:flex-row"
           style="transition-delay: 0.4s"
@@ -76,42 +80,45 @@ const columns: FooterColumn[] = [
             40 82 92 40
           </UButton>
         </div>
-      </div>
-    </div>
+      </template>
+    </UPageSection>
 
-    <!-- Divider -->
-    <div class="mx-auto max-w-(--ui-container) px-6 lg:px-8">
-      <div class="h-px bg-white/10" />
-    </div>
+    <!-- Footer with columns and bottom bar -->
+    <UFooter
+      :ui="{
+        top: 'py-16',
+        container: 'py-6'
+      }"
+    >
+      <template #top>
+        <USeparator :ui="{ border: 'border-white/10' }" />
 
-    <!-- Footer columns -->
-    <div class="py-16">
-      <UContainer>
-        <UFooterColumns :columns="columns">
-          <template #left>
-            <div class="flex flex-col gap-4">
-              <span class="text-2xl font-bold text-white">DBPUDSER</span>
-              <p class="text-sm text-gray-400">
-                Kvalitet · Stabilitet · Loyalitet
-              </p>
-              <p class="text-sm text-gray-400 max-w-xs">
-                Professionel vinduespolering og udvendig rengøring på Fyn, Trekantområdet og dele af København.
-              </p>
-            </div>
-          </template>
-        </UFooterColumns>
-      </UContainer>
-    </div>
+        <UContainer class="py-16">
+          <UFooterColumns :columns="columns">
+            <template #left>
+              <div class="flex flex-col gap-4">
+                <span class="text-2xl font-bold text-white">DBPUDSER</span>
+                <p class="text-sm text-gray-400">
+                  Kvalitet · Stabilitet · Loyalitet
+                </p>
+                <p class="text-sm text-gray-400 max-w-xs">
+                  Professionel vinduespolering og udvendig rengøring på Fyn, Trekantområdet og dele af København.
+                </p>
+              </div>
+            </template>
+          </UFooterColumns>
+        </UContainer>
 
-    <!-- Bottom bar -->
-    <div class="mx-auto max-w-(--ui-container) px-6 lg:px-8">
-      <div class="h-px bg-white/10" />
-    </div>
-    <div class="flex items-center justify-between px-6 py-6 mx-auto max-w-(--ui-container) lg:px-8">
-      <p class="text-sm text-gray-500">
-        &copy; {{ new Date().getFullYear() }} DBPUDSER. Alle rettigheder forbeholdes.
-      </p>
-      <div class="flex gap-2">
+        <USeparator :ui="{ border: 'border-white/10' }" />
+      </template>
+
+      <template #left>
+        <p class="text-sm text-gray-500">
+          &copy; {{ new Date().getFullYear() }} DBPUDSER. Alle rettigheder forbeholdes.
+        </p>
+      </template>
+
+      <template #right>
         <UButton
           icon="i-simple-icons-facebook"
           color="neutral"
@@ -128,7 +135,7 @@ const columns: FooterColumn[] = [
           target="_blank"
           aria-label="YouTube"
         />
-      </div>
-    </div>
+      </template>
+    </UFooter>
   </footer>
 </template>

@@ -47,7 +47,7 @@ const videoOpen = ref(false)
       class="scroll-reveal absolute inset-x-0 bottom-8 z-10 flex justify-center"
       style="transition-delay: 1.1s"
     >
-      <FrontpageScrollIndicator />
+      <FrontpageHeroScrollIndicator />
     </div>
   </section>
 </template>

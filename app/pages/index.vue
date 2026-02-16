@@ -1,6 +1,6 @@
 <template>
-  <FrontpageHero />
-  <FrontpageServices />
-  <FrontpageAbout />
-  <FrontpageReferences />
+  <FrontpageHeroSection />
+  <FrontpageServicesSection />
+  <FrontpageAboutSection />
+  <FrontpageReferencesSection />
 </template>

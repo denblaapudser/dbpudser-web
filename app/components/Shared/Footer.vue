@@ -33,63 +33,58 @@ const columns: FooterColumn[] = [
 </script>
 
 <template>
-  <footer class="dark bg-gray-950">
-    <!-- CTA -->
-    <SharedFooterCta />
+  <UFooter
+    :ui="{
+      root: 'dark bg-gray-950',
+      top: 'py-16',
+      container: 'py-6'
+    }"
+  >
+    <template #top>
+      <USeparator :ui="{ border: 'border-white/10' }" />
 
-    <!-- Footer with columns and bottom bar -->
-    <UFooter
-      :ui="{
-        top: 'py-16',
-        container: 'py-6'
-      }"
-    >
-      <template #top>
-        <USeparator :ui="{ border: 'border-white/10' }" />
+      <UContainer class="py-16">
+        <UFooterColumns :columns="columns">
+          <template #left>
+            <div class="flex flex-col gap-4">
+              <span class="text-2xl font-bold text-white">DBPUDSER</span>
+              <p class="text-sm text-gray-400">
+                Kvalitet · Stabilitet · Loyalitet
+              </p>
+              <p class="text-sm text-gray-400 max-w-xs">
+                Professionel vinduespolering og udvendig rengøring på Fyn, Trekantområdet og dele af København.
+              </p>
+            </div>
+          </template>
+        </UFooterColumns>
+      </UContainer>
 
-        <UContainer class="py-16">
-          <UFooterColumns :columns="columns">
-            <template #left>
-              <div class="flex flex-col gap-4">
-                <span class="text-2xl font-bold text-white">DBPUDSER</span>
-                <p class="text-sm text-gray-400">
-                  Kvalitet · Stabilitet · Loyalitet
-                </p>
-                <p class="text-sm text-gray-400 max-w-xs">
-                  Professionel vinduespolering og udvendig rengøring på Fyn, Trekantområdet og dele af København.
-                </p>
-              </div>
-            </template>
-          </UFooterColumns>
-        </UContainer>
+      <USeparator :ui="{ border: 'border-white/10' }" />
+    </template>
 
-        <USeparator :ui="{ border: 'border-white/10' }" />
-      </template>
+    <template #left>
+      <p class="text-sm text-gray-500">
+        &copy; {{ new Date().getFullYear() }} DBPUDSER. Alle rettigheder forbeholdes.
+      </p>
+    </template>
 
-      <template #left>
-        <p class="text-sm text-gray-500">
-          &copy; {{ new Date().getFullYear() }} DBPUDSER. Alle rettigheder forbeholdes.
-        </p>
-      </template>
-
-      <template #right>
-        <UButton
-          icon="i-simple-icons-facebook"
-          color="neutral"
-          variant="ghost"
-          to="https://www.facebook.com/Flemming-Rene-Vinduespolering/"
-          target="_blank"
-          aria-label="Facebook"
-        />
-        <UButton
-          icon="i-simple-icons-youtube"
-          color="neutral"
-          variant="ghost"
-          to="https://youtu.be/kMPSAQV5r0s"
-          target="_blank"
-          aria-label="YouTube"
-        />
-      </template>
-    </UFooter>
-  </footer>
+    <template #right>
+      <UButton
+        icon="i-simple-icons-facebook"
+        color="neutral"
+        variant="ghost"
+        to="https://www.facebook.com/Flemming-Rene-Vinduespolering/"
+        target="_blank"
+        aria-label="Facebook"
+      />
+      <UButton
+        icon="i-simple-icons-youtube"
+        color="neutral"
+        variant="ghost"
+        to="https://youtu.be/kMPSAQV5r0s"
+        target="_blank"
+        aria-label="YouTube"
+      />
+    </template>
+  </UFooter>
 </template>

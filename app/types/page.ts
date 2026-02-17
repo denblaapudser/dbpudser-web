@@ -15,6 +15,9 @@ export interface ServiceItem {
   icon: string
   to: string
   image: string
+  order?: number
+  colSpan?: number
+  rowSpan?: number
 }
 
 export interface ServicesContent {
@@ -48,7 +51,6 @@ export interface FrontpageData {
   hero: HeroContent
   services: ServicesContent
   about: AboutContent
-  references: ReferencesContent
 }
 
 // Services page

@@ -28,7 +28,7 @@ const videoOpen = ref(false)
     </video>
 
     <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/80 to-neutral-900/50 backdrop-blur-sm" />
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-950/90 to-slate-800/50 backdrop-blur-sm" />
 
     <!-- Content -->
     <div class="relative z-10 flex h-full items-center">

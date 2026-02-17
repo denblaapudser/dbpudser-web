@@ -29,40 +29,12 @@ useScrollReveal()
 
 <template>
   <template v-if="page">
-    <!-- Hero -->
-    <UPageSection
-      :ui="{
-        root: 'bg-gray-950 text-white pt-32 overflow-hidden',
-        container: 'py-24',
-        header: 'max-w-3xl mx-auto'
-      }"
-    >
-      <template #headline>
-        <USeparator
-          class="scroll-reveal flex items-center justify-center gap-3"
-          style="transition-delay: 0.1s"
-          color="primary"
-          label="Kontakt"
-          :ui="{
-            border: 'w-8',
-            label: 'text-xs font-semibold uppercase tracking-[0.2em] text-primary'
-          }"
-        />
-      </template>
-
+    <SharedHero eyebrow="Kontakt" :description="page.description">
       <template #title>
-        <span class="scroll-reveal block" style="transition-delay: 0.2s">
-          Lad os tage en
-          <span class="text-cyan-400">snak</span>
-        </span>
+        Lad os tage en
+        <span class="text-cyan-400">snak</span>
       </template>
-
-      <template #description>
-        <span class="scroll-reveal block text-gray-300" style="transition-delay: 0.3s">
-          {{ page.description }}
-        </span>
-      </template>
-    </UPageSection>
+    </SharedHero>
 
     <!-- Contact form + info -->
     <UPageSection

@@ -19,9 +19,5 @@ const { data: page } = await usePageContent('frontpage')
       :stats="page.about.stats"
       :benefits="page.about.benefits"
     />
-    <FrontpageReferencesSection
-      :references="page.references.references"
-      :footer-text="page.references.footerText"
-    />
   </template>
 </template>

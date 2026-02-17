@@ -57,7 +57,7 @@ useScrollReveal()
           next: '-right-4 sm:-end-13'
         }"
       >
-        <FrontpageServicesCard
+        <ServicesCard
           :title="item.title"
           :description="item.description"
           :icon="item.icon"

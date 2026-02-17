@@ -5,7 +5,7 @@ useScrollReveal()
 <template>
   <UPageSection
     :ui="{
-      root: 'bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)]',
+      root: 'dark bg-gray-950 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)]',
       container: 'py-24 lg:py-45',
       header: 'max-w-3xl mx-auto'
     }"
@@ -18,7 +18,7 @@ useScrollReveal()
         label="Gratis tilbud"
         :ui="{
           border: 'w-8',
-          label: 'text-xs font-semibold uppercase tracking-[0.2em]'
+          label: 'text-xs font-semibold uppercase tracking-[0.2em] text-primary'
         }"
       />
     </template>

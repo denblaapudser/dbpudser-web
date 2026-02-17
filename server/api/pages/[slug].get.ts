@@ -6,14 +6,19 @@ const sharedServices: ServiceItem[] = [
     description: 'Professionel vinduespolering med rentvandsanlæg. Vi når alle højder og vinduestyper — op til 16 meter uden stiger.',
     icon: 'i-lucide-sparkles',
     to: '/tjenester/vinduespolering',
-    image: '/img/windowcleaner.jpg'
+    image: '/img/windowcleaner.jpg',
+    order: 1,
+    colSpan: 2,
+    rowSpan: 2
   },
   {
     title: 'Solcellevask',
     description: 'Øg udbyttet af dine solceller med skånsom rengøring. Vi bruger filtreret vand ved 45°C for kalkfrie resultater.',
     icon: 'i-lucide-sun',
     to: '/tjenester/solcellevask',
-    image: '/img/windowcleaner.jpg'
+    image: '/img/windowcleaner.jpg',
+    order: 2,
+    rowSpan: 2
   },
   {
     title: 'Fliserens',
@@ -67,20 +72,6 @@ const frontpage: FrontpageData = {
       { icon: 'i-lucide-message-circle', text: 'Dansktalende personale' },
       { icon: 'i-lucide-shield-check', text: 'Forsikret & certificeret' }
     ]
-  },
-  references: {
-    references: [
-      'ATbiler.png',
-      'assens-skibsværft.png',
-      'egeskov.png',
-      'stutteri.png',
-      'calwin.png',
-      'echoship.png',
-      'elogdata.png',
-      'schelenborg-gods.png',
-      'tv2.png'
-    ],
-    footerText: 'Skal din virksomhed være vores næste reference? Kontakt os i dag for en uforpligtende snak!'
   }
 }
 

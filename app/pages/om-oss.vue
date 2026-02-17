@@ -6,40 +6,12 @@ useScrollReveal()
 
 <template>
   <template v-if="page">
-    <!-- Hero -->
-    <UPageSection
-      :ui="{
-        root: 'bg-gray-950 text-white pt-32 overflow-hidden',
-        container: 'py-24',
-        header: 'max-w-3xl mx-auto'
-      }"
-    >
-      <template #headline>
-        <USeparator
-          class="scroll-reveal flex items-center justify-center gap-3"
-          style="transition-delay: 0.1s"
-          color="primary"
-          label="Om os"
-          :ui="{
-            border: 'w-8',
-            label: 'text-xs font-semibold uppercase tracking-[0.2em] text-primary'
-          }"
-        />
-      </template>
-
+    <SharedHero eyebrow="Om os" :description="page.description">
       <template #title>
-        <span class="scroll-reveal block" style="transition-delay: 0.2s">
-          Passion for
-          <span class="text-cyan-400">rene overflader</span>
-        </span>
+        Passion for
+        <span class="text-cyan-400">rene overflader</span>
       </template>
-
-      <template #description>
-        <span class="scroll-reveal block text-gray-300" style="transition-delay: 0.3s">
-          {{ page.description }}
-        </span>
-      </template>
-    </UPageSection>
+    </SharedHero>
 
     <!-- Our story -->
     <UPageSection
@@ -53,7 +25,7 @@ useScrollReveal()
       <template #body>
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div class="scroll-reveal order-2 lg:order-1" style="transition-delay: 0.1s">
-            <FrontpageAboutImageCard :image="page.image" :stats="page.stats" />
+            <AboutImageCard :image="page.image" :stats="page.stats" />
           </div>
           <div class="scroll-reveal order-1 lg:order-2" style="transition-delay: 0.2s">
             <div class="flex items-center gap-3 mb-4">
@@ -152,7 +124,7 @@ useScrollReveal()
 
       <template #body>
         <div class="scroll-reveal mx-auto max-w-xl" style="transition-delay: 0.3s">
-          <FrontpageAboutBenefits :benefits="page.benefits" />
+          <AboutBenefits :benefits="page.benefits" />
         </div>
       </template>
     </UPageSection>

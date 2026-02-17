@@ -26,7 +26,7 @@ useScrollReveal()
       links: 'scroll-reveal flex flex-wrap items-center gap-4 delay-600',
     }"
   >
-    <FrontpageAboutImageCard :image="image" :stats="stats" />
+    <AboutImageCard :image="image" :stats="stats" />
 
     <template #headline>
       <div class="flex items-center gap-3">
@@ -43,7 +43,7 @@ useScrollReveal()
     </template>
 
     <template #body>
-      <FrontpageAboutBenefits :benefits="benefits" />
+      <AboutBenefits :benefits="benefits" />
     </template>
 
     <template #links>

@@ -15,9 +15,9 @@ const columns: FooterColumn[] = [
   {
     label: 'Virksomhed',
     children: [
-      { label: 'Om os', to: '/#about' },
+      { label: 'Om os', to: '/om-oss' },
+      { label: 'Tjenester', to: '/tjenester' },
       { label: 'Referencer', to: '/#references' },
-      { label: 'Kontakt', to: '/kontakt' },
       { label: 'Job', to: '/job' }
     ]
   },

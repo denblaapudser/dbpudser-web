@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { openQuote } = useContactSlideover()
+
 useScrollReveal()
 </script>
 
@@ -42,7 +44,7 @@ useScrollReveal()
         class="scroll-reveal flex flex-col items-center justify-center gap-4 sm:flex-row"
         style="transition-delay: 0.4s"
       >
-        <UButton size="xl" color="primary" trailing-icon="i-lucide-arrow-right">
+        <UButton size="xl" color="primary" trailing-icon="i-lucide-arrow-right" @click="openQuote()">
           Få et gratis tilbud
         </UButton>
         <UButton size="xl" color="neutral" variant="outline" leading-icon="i-lucide-phone" to="tel:40829240">

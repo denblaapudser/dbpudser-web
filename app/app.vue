@@ -1,7 +1,8 @@
 <template>
   <UApp>
     <NuxtLayout>
-        <NuxtPage />
+      <NuxtPage />
     </NuxtLayout>
+    <SharedContactSlideover />
   </UApp>
 </template>

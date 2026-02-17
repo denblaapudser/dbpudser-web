@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import type { de } from '@nuxt/ui/runtime/locale/index.js'
-
 const { data: page } = await usePageContent('services')
+const { openQuote } = useContactSlideover()
 
 const sortedServices = computed(() => {
   if (!page.value) return []
@@ -78,8 +77,8 @@ useScrollReveal()
           variant="outline"
           color="primary"
           size="lg"
-          to="/contact"
           trailing-icon="i-lucide-arrow-right"
+          @click="openQuote()"
         >
           Kontakt os for et tilbud
         </UButton>

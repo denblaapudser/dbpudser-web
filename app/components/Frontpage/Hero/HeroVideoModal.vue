@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineProps<{
+  videoUrl: string
+}>()
+
 const open = defineModel<boolean>('open', { required: true })
 const modalVideoRef = ref<HTMLVideoElement | null>(null)
 
@@ -35,7 +39,7 @@ watch(open, (isOpen) => {
         </button>
         <video
           ref="modalVideoRef"
-          src="/videos/intro.mp4"
+          :src="videoUrl"
           controls
           class="max-h-full max-w-full rounded-lg shadow-2xl"
         />

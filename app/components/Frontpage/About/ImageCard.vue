@@ -1,16 +1,16 @@
 <script setup lang="ts">
-const stats = [
-  { value: '2006', label: 'Etableret' },
-  { value: '8', label: 'Medarbejdere' },
-  { value: '30+', label: 'Års erfaring' },
-  { value: '16m', label: 'Rækkevidde' }
-]
+import type { AboutStat } from '~/types/page'
+
+defineProps<{
+  image: string
+  stats: AboutStat[]
+}>()
 </script>
 
 <template>
   <div class="scroll-reveal relative" style="transition-delay: 0.1s">
     <img
-      src="/img/om-os.jpg"
+      :src="image"
       alt="DB Pudser teamet"
       class="relative w-full rounded-2xl object-cover shadow-xl"
     >

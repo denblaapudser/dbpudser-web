@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import type { HeroBenefit } from '~/types/page'
+
+defineProps<{
+  videoUrl: string
+  description: string
+  benefits: HeroBenefit[]
+}>()
+
 useScrollReveal()
 
 const videoOpen = ref(false)
@@ -16,7 +24,7 @@ const videoOpen = ref(false)
       playsinline
       class="absolute inset-0 h-full w-full object-cover"
     >
-      <source src="/videos/intro.mp4" type="video/mp4">
+      <source :src="videoUrl" type="video/mp4">
     </video>
 
     <!-- Overlay -->
@@ -26,21 +34,21 @@ const videoOpen = ref(false)
     <div class="relative z-10 flex h-full items-center">
       <div class="mx-auto w-full max-w-(--ui-container) px-6 lg:px-8">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-8">
-          <FrontpageHeroContent v-model:video-open="videoOpen" />
+          <FrontpageHeroContent v-model:video-open="videoOpen" :description="description" :benefits="benefits" />
 
           <!-- Large Play Button -->
           <div
             class="scroll-reveal hidden lg:col-span-2 lg:flex lg:items-center lg:justify-center"
             style="transition-delay: 0.8s"
           >
-            <FrontpageHeroPlayButton @click="videoOpen = true" />
+            <FrontpageHeroButton @click="videoOpen = true" />
           </div>
         </div>
       </div>
     </div>
 
     <!-- Video Modal -->
-    <FrontpageHeroVideoModal v-model:open="videoOpen" />
+    <FrontpageHeroVideoModal v-model:open="videoOpen" :video-url="videoUrl" />
 
     <!-- Scroll Indicator -->
     <div

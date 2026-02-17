@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import type { HeroBenefit } from '~/types/page'
+
+defineProps<{
+  description: string
+  benefits: HeroBenefit[]
+}>()
+</script>
+
 <template>
   <div class="lg:col-span-3">
     <!-- Eyebrow -->
@@ -23,8 +32,7 @@
       class="scroll-reveal mb-8 max-w-lg text-lg leading-relaxed text-neutral-300"
       style="transition-delay: 0.4s"
     >
-      Vi leverer professionel vinduespudsning, algebehandling og tagrens
-      til private og erhverv.
+      {{ description }}
     </p>
 
     <!-- CTA Row -->
@@ -46,7 +54,7 @@
 
     <!-- Benefits -->
     <div class="scroll-reveal" style="transition-delay: 0.7s">
-      <FrontpageHeroBenefits />
+      <FrontpageHeroBenefits :benefits="benefits" />
     </div>
   </div>
 </template>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-const benefits = [
-  { icon: 'i-lucide-award', text: 'Uddannede fagfolk' },
-  { icon: 'i-lucide-droplets', text: 'Rentvandsanlæg' },
-  { icon: 'i-lucide-message-circle', text: 'Dansktalende personale' },
-  { icon: 'i-lucide-shield-check', text: 'Forsikret & certificeret' }
-]
+import type { AboutBenefit } from '~/types/page'
+
+defineProps<{
+  benefits: AboutBenefit[]
+}>()
 </script>
 
 <template>

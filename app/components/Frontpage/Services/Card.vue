@@ -4,6 +4,7 @@ defineProps<{
   description: string
   icon: string
   to: string
+  image: string
 }>()
 </script>
 
@@ -13,7 +14,7 @@ defineProps<{
     class="group relative mx-5 sm:mx-0 overflow-hidden rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl block h-full"
   >
     <img
-      src="/img/windowcleaner.jpg"
+      :src="image"
       alt=""
       class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
     >

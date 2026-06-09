@@ -55,6 +55,7 @@ const items: NavigationMenuItem[] = [
 
     <template #right>
       <UNavigationMenu
+        class="hidden lg:flex"
         :items="items"
         variant="link"
         color="neutral"
@@ -62,9 +63,21 @@ const items: NavigationMenuItem[] = [
           viewportWrapper: 'w-200 !left-auto right-0'
         }"
         />
-      <USeparator orientation="vertical" class="h-7 px-5" :ui="{border: 'dark:border-gray-400 border-gray-300'}"/>
-      <UButton variant="outline" color="neutral" @click="openContact()">Kontakt os</UButton>
+      <USeparator orientation="vertical" class="hidden lg:flex h-7 px-5" :ui="{border: 'dark:border-gray-400 border-gray-300'}"/>
+      <UButton class="hidden lg:inline-flex" variant="outline" color="neutral" @click="openContact()">Kontakt os</UButton>
       <UButton color="primary" @click="openQuote()">Få et tilbud</UButton>
+    </template>
+
+    <template #body>
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        color="neutral"
+      />
+      <div class="mt-6 flex flex-col gap-3">
+        <UButton block color="primary" @click="openQuote()">Få et tilbud</UButton>
+        <UButton block variant="outline" color="neutral" @click="openContact()">Kontakt os</UButton>
+      </div>
     </template>
   </UHeader>
 </template>

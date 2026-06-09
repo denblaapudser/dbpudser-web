@@ -30,7 +30,7 @@ useScrollReveal()
       <UPageSection
         :description="service.description"
         :ui="{
-          root: 'dark relative z-10 h-170 flex items-end',
+          root: 'dark relative z-10 h-120 lg:h-170 flex items-end',
           header: 'max-w-2xl',
           title: 'text-left scroll-reveal text-4xl font-bold leading-tight text-white delay-300 lg:text-5xl',
           description: 'scroll-reveal text-lg leading-relaxed text-slate-300 delay-500',
@@ -61,7 +61,7 @@ useScrollReveal()
     <UPageSection
       :ui="{
         root: 'relative z-10 bg-white',
-        container: 'py-50',
+        container: 'py-16 lg:py-50',
       }"
     >
       <template #body>
@@ -172,7 +172,7 @@ useScrollReveal()
     <!-- Features -->
     <UPageSection
       :ui="{
-        root: 'h-250 flex items-center bg-slate-100 overflow-hidden',
+        root: 'lg:h-250 flex items-center bg-slate-100 overflow-hidden',
         container: 'py-24',
         header: 'max-w-2xl mx-auto'
       }"

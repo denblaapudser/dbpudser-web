@@ -16,7 +16,7 @@ useScrollReveal()
       <UPageSection
         :description="page.description"
         :ui="{
-          root: 'dark relative z-10 h-170 flex items-center',
+          root: 'dark relative z-10 h-120 lg:h-170 flex items-center',
           title: 'scroll-reveal text-4xl font-bold leading-tight text-white delay-300 lg:text-5xl',
           description: 'scroll-reveal text-lg leading-relaxed text-slate-300 delay-500',
         }"

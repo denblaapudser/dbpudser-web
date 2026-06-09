@@ -17,7 +17,7 @@ useScrollReveal()
     description="Vælg blandt vores specialiserede ydelser inden for udvendig rengøring – vi tilbyder alt fra vinduespolering til facaderens, altid med fokus på kvalitet og grundighed."
     :ui="{
       title: 'scroll-reveal block delay-300',
-      root: 'dark -mt-25 bg-slate-900 relative z-5 h-170 flex items-center bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)] overflow-hidden',
+      root: 'dark -mt-25 bg-slate-900 relative z-5 h-120 lg:h-170 flex items-center bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)] overflow-hidden',
       description: 'scroll-reveal block delay-500 text-slate-300',
     }"
   >

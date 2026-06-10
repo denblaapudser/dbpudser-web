@@ -13,7 +13,7 @@ defineProps<{
       :key="benefit.label"
       class="flex items-center gap-2 text-sm text-slate-400"
     >
-      <UIcon :name="benefit.icon" class="size-4 text-cyan-500" />
+      <UIcon :name="benefit.icon" class="size-4 text-primary-500" />
       <span>{{ benefit.label }}</span>
       <span v-if="index < benefits.length - 1" class="ml-4 hidden text-slate-300 sm:inline">&bull;</span>
     </div>

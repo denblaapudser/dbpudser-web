@@ -6,6 +6,7 @@ export interface HeroBenefit {
 export interface HeroContent {
   description: string
   videoUrl: string
+  imageUrl: string
   benefits: HeroBenefit[]
 }
 
@@ -93,6 +94,7 @@ export interface CompanyValue {
 export interface TeamMember {
   name: string
   role: string
+  image: string
 }
 
 export interface AboutPageData {

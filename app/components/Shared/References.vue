@@ -19,21 +19,12 @@ useScrollReveal()
     }"
   >
     <template #headline>
-      <USeparator
-        class="scroll-reveal flex items-center justify-center gap-3"
-        style="transition-delay: 0.1s"
-        color="primary"
-        label="Referencer"
-        :ui="{
-          border: 'w-8',
-          label: 'text-xs font-semibold uppercase tracking-[0.2em]',
-        }"
-      />
+      <SharedEyebrow class="scroll-reveal" style="transition-delay: 0.1s" label="Referencer" />
     </template>
 
     <template #title>
       Virksomheder der
-      <span class="text-cyan-600">stoler på os</span>
+      <span class="text-primary-600">stoler på os</span>
     </template>
 
     <template #description>

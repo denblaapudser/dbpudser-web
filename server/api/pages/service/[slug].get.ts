@@ -5,7 +5,7 @@ const services: Record<string, ServiceDetailData> = {
     title: 'Vinduespolering',
     description: 'Professionel vinduespolering med rentvandsanlæg — op til 16 meter uden stiger.',
     icon: 'i-lucide-sparkles',
-    image: '/img/windowcleaner.jpg',
+    image: '/img/service/windowcleaner.jpg',
     longDescription: 'Vores vinduespolering udføres med avanceret rentvandsanlæg, der sikrer et perfekt resultat uden striber eller kalkaflejringer. Vi kan nå vinduer op til 16 meters højde uden brug af stiger, hvilket gør processen både sikker og effektiv. Uanset om det er private boliger, etageejendomme eller erhvervsbygninger, tilpasser vi vores metode til dine specifikke behov. Vi tilbyder både enkeltstående rengøring og faste abonnementsaftaler.',
     features: [
       { title: 'Rentvandsanlæg', description: 'Filtreret vand uden mineraler giver stribefrie vinduer uden brug af kemikalier.', icon: 'i-lucide-droplets' },
@@ -25,7 +25,7 @@ const services: Record<string, ServiceDetailData> = {
     title: 'Solcellevask',
     description: 'Øg udbyttet af dine solceller med skånsom, professionel rengøring.',
     icon: 'i-lucide-sun',
-    image: '/img/windowcleaner.jpg',
+    image: '/img/service/solcellevask.png',
     longDescription: 'Beskidte solceller kan miste op til 25% af deres effektivitet. Vores professionelle solcellevask fjerner skidt, pollen, fugleklatter og andre aflejringer skånsomt og effektivt. Vi bruger filtreret vand opvarmet til 45°C, som sikrer kalkfrie resultater uden at beskadige panelernes overflade. Regelmæssig rengøring forlænger levetiden og maksimerer dit energiudbytte.',
     features: [
       { title: 'Opvarmet vand', description: 'Filtreret vand ved 45°C løsner skidt effektivt uden kemikalier.', icon: 'i-lucide-thermometer' },
@@ -45,7 +45,7 @@ const services: Record<string, ServiceDetailData> = {
     title: 'Fliserens',
     description: 'Vi giver dine fliser og terrasser nyt liv med grundig rengøring.',
     icon: 'i-lucide-grid-2x2',
-    image: '/img/windowcleaner.jpg',
+    image: '/img/service/fliserens.png',
     longDescription: 'Over tid ophobes snavs, alger og mos på fliser, terrasser og indkørsler, hvilket gør dem glatte og uanseelige. Vores professionelle fliserens fjerner effektivt selv de mest genstridige belægninger med skånsom højtryksvask og specialiseret efterbehandling. Vi behandler alle typer fliser — fra betonsten og klinker til natursten — og efterlader dem som nye.',
     features: [
       { title: 'Højtryksvask', description: 'Professionelt udstyr fjerner selv dybt indgroet snavs effektivt.', icon: 'i-lucide-zap' },
@@ -65,7 +65,7 @@ const services: Record<string, ServiceDetailData> = {
     title: 'Algebehandling af tag',
     description: 'Forlæng tagets levetid med professionel algebehandling.',
     icon: 'i-lucide-home',
-    image: '/img/windowcleaner.jpg',
+    image: '/img/service/algebehandling-tag.png',
     longDescription: 'Alger og mos på taget er ikke bare usmukt — det kan også skade tagmaterialet og forkorte tagets levetid markant. Vores professionelle algebehandling fjerner belægninger skånsomt og påfører en langvarig beskyttelse, der forhindrer genvækst i op til 5 år. Vi arbejder med alle tagtyper, herunder tegl, betontagsten, eternit og stålplader.',
     features: [
       { title: 'Skånsom metode', description: 'Ingen højtryk på taget — vi bruger kemisk behandling, der ikke skader materialet.', icon: 'i-lucide-shield-check' },
@@ -85,7 +85,7 @@ const services: Record<string, ServiceDetailData> = {
     title: 'Algebehandling af facade',
     description: 'Giv facaden sit oprindelige udseende tilbage med professionel behandling.',
     icon: 'i-lucide-building',
-    image: '/img/windowcleaner.jpg',
+    image: '/img/service/algebehandling-facade.png',
     longDescription: 'Grønne og sorte belægninger på facaden er et tydeligt tegn på alge- og svampevækst, der langsomt nedbryder overfladen. Vores professionelle facadebehandling fjerner belægninger effektivt og påfører en beskyttende coating, der forhindrer genvækst. Vi behandler alle typer facader — fra puds og murværk til træbeklædning og fibercementplader — og genopretter facadens oprindelige udseende.',
     features: [
       { title: 'Alle facadetyper', description: 'Vi behandler puds, mur, træ, fibercementplader og andre materialer.', icon: 'i-lucide-building' },

@@ -30,8 +30,8 @@ useScrollReveal()
 
     <template #headline>
       <div class="flex items-center gap-3">
-        <span class="h-px w-8 bg-cyan-500" />
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600">
+        <span class="h-px w-8 bg-primary-500" />
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
           Om os
         </span>
       </div>
@@ -39,7 +39,7 @@ useScrollReveal()
 
     <template #title>
       Passion for
-      <span class="text-cyan-600">rene overflader</span>
+      <span class="text-primary-600">rene overflader</span>
     </template>
 
     <template #body>

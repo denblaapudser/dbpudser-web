@@ -20,7 +20,7 @@ defineProps<{
         :key="stat.label"
         class="text-center"
       >
-        <div class="text-xl font-bold text-cyan-600 lg:text-2xl">
+        <div class="text-xl font-bold text-primary-600 lg:text-2xl">
           {{ stat.value }}
         </div>
         <div class="text-xs text-gray-500">

@@ -24,21 +24,12 @@ useScrollReveal()
     }"
   >
     <template #headline>
-      <USeparator
-        class="scroll-reveal flex items-center justify-center gap-3"
-        style="transition-delay: 0.1s"
-        color="primary"
-        label="Vores tjenester"
-        :ui="{
-          border: 'w-8',
-          label: 'text-xs font-semibold uppercase tracking-[0.2em] text-primary ',
-        }"
-      />
+      <SharedEyebrow class="scroll-reveal" style="transition-delay: 0.1s" label="Vores ydelser" />
     </template>
 
     <template #title>
       Alt inden for
-      <span class="text-cyan-600">udvendig rengøring</span>
+      <span class="text-primary-600">udvendig rengøring</span>
     </template>
 
     <template #body>
@@ -69,7 +60,7 @@ useScrollReveal()
 
     <template #footer>
       <UButton size="xl" color="primary" trailing-icon="i-lucide-arrow-right">
-        Se alle tjenester
+        Se alle ydelser
       </UButton>
     </template>
   </UPageSection>

@@ -1,17 +1,11 @@
 const isOpen = ref(false)
-const activeTab = ref<'message' | 'quote'>('message')
-const selectedService = ref<string | undefined>()
 
+/**
+ * Controls the contact slideover (message form + company info).
+ * Quotes are handled separately by [[useQuoteModal]].
+ */
 export function useContactSlideover() {
   function openContact() {
-    activeTab.value = 'message'
-    selectedService.value = undefined
-    isOpen.value = true
-  }
-
-  function openQuote(service?: string) {
-    activeTab.value = 'quote'
-    selectedService.value = service
     isOpen.value = true
   }
 
@@ -21,10 +15,7 @@ export function useContactSlideover() {
 
   return {
     isOpen,
-    activeTab,
-    selectedService,
     openContact,
-    openQuote,
     close
   }
 }

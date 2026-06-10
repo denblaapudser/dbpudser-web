@@ -6,6 +6,7 @@ const { data: page } = await usePageContent('frontpage')
   <template v-if="page">
     <FrontpageHeroSection
       :video-url="page.hero.videoUrl"
+      :image-url="page.hero.imageUrl"
       :description="page.hero.description"
       :benefits="page.hero.benefits"
     />

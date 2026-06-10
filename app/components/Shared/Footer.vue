@@ -1,22 +1,18 @@
 <script setup lang="ts">
 import type { FooterColumn } from '@nuxt/ui'
 
+const { services, contact } = useSiteConfig()
+
 const columns: FooterColumn[] = [
   {
-    label: 'Tjenester',
-    children: [
-      { label: 'Vinduespolering', to: '/tjenester/vinduespolering' },
-      { label: 'Solcellevask', to: '/tjenester/solcellevask' },
-      { label: 'Fliserens', to: '/tjenester/fliserens' },
-      { label: 'Algebehandling af tag', to: '/tjenester/algebehandling-tag' },
-      { label: 'Algebehandling af facade', to: '/tjenester/algebehandling-facade' }
-    ]
+    label: 'Ydelser',
+    children: services.map(s => ({ label: s.label, to: `/ydelser/${s.slug}` }))
   },
   {
     label: 'Virksomhed',
     children: [
-      { label: 'Om os', to: '/om-oss' },
-      { label: 'Tjenester', to: '/tjenester' },
+      { label: 'Om os', to: '/om-os' },
+      { label: 'Ydelser', to: '/ydelser' },
       { label: 'Referencer', to: '/#references' },
       { label: 'Job', to: '/job' }
     ]
@@ -24,9 +20,9 @@ const columns: FooterColumn[] = [
   {
     label: 'Kontakt',
     children: [
-      { label: '40 82 92 40', to: 'tel:40829240', icon: 'i-lucide-phone' },
-      { label: 'info@fl-rene.dk', to: 'mailto:info@fl-rene.dk', icon: 'i-lucide-mail' },
-      { label: 'Bøgevej 14, 5683 Haarby', icon: 'i-lucide-map-pin' }
+      { label: contact.phone, to: contact.phoneHref, icon: 'i-lucide-phone' },
+      { label: contact.email, to: contact.emailHref, icon: 'i-lucide-mail' },
+      { label: contact.address, icon: 'i-lucide-map-pin' }
     ]
   }
 ]

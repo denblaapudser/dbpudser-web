@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { openQuote } = useContactSlideover()
+const { openQuote } = useQuoteModal()
+const { contact } = useSiteConfig()
 
 useScrollReveal()
 </script>
@@ -13,22 +14,13 @@ useScrollReveal()
     }"
   >
     <template #headline>
-      <USeparator
-        class="scroll-reveal flex items-center justify-center gap-3"
-        style="transition-delay: 0.1s"
-        color="primary"
-        label="Gratis tilbud"
-        :ui="{
-          border: 'w-8',
-          label: 'text-xs font-semibold uppercase tracking-[0.2em] text-primary'
-        }"
-      />
+      <SharedEyebrow class="scroll-reveal" style="transition-delay: 0.1s" label="Gratis tilbud" />
     </template>
 
     <template #title>
       <span class="scroll-reveal block" style="transition-delay: 0.2s">
         Klar til et
-        <span class="text-cyan-400">krystalklart</span>
+        <span class="text-primary-400">krystalklart</span>
         resultat?
       </span>
     </template>
@@ -47,8 +39,8 @@ useScrollReveal()
         <UButton size="xl" color="primary" trailing-icon="i-lucide-arrow-right" @click="openQuote()">
           Få et gratis tilbud
         </UButton>
-        <UButton size="xl" color="neutral" variant="outline" leading-icon="i-lucide-phone" to="tel:40829240">
-          40 82 92 40
+        <UButton size="xl" color="neutral" variant="outline" leading-icon="i-lucide-phone" :to="contact.phoneHref">
+          {{ contact.phone }}
         </UButton>
       </div>
     </template>

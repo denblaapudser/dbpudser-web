@@ -26,13 +26,21 @@ export default defineNuxtConfig({
     leadEmailFrom: '',
     public: {
       // Exposed to the client (set via NUXT_PUBLIC_* env vars)
-      turnstileSiteKey: ''
+      turnstileSiteKey: '',
+      // Canonical production URL — used by robots.txt and sitemap.xml
+      siteUrl: 'https://www.fl-rene.dk'
     }
   },
 
   // Prerender all pages at build time (static-fast), while the Node server
   // still handles dynamic routes like /api/lead.
   nitro: {
+    // Pre-generate .br/.gz for public assets so the Node server serves them
+    // compressed (the 196 KiB CSS → ~25 KiB on the wire)
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true
+    },
     prerender: {
       crawlLinks: true,
       routes: [

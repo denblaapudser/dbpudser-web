@@ -48,7 +48,7 @@ const columns: FooterColumn[] = [
                 {{ company.slogan }}
               </p>
               <p class="text-sm text-gray-400 max-w-xs">
-                Professionel vinduespolering og udvendig rengøring på Fyn, Trekantområdet og dele af København.
+                Professionel vinduespolering, solcellevask, fliserens og meget mere på Fyn, Trekantområdet og dele af København.
               </p>
             </div>
           </template>

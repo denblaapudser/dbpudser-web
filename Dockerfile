@@ -8,6 +8,11 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
+# The Turnstile SITE key is public (rendered in the widget) — not a secret —
+# and must be baked into the prerendered pages at build time.
+ARG NUXT_PUBLIC_TURNSTILE_SITE_KEY=""
+ENV NUXT_PUBLIC_TURNSTILE_SITE_KEY=$NUXT_PUBLIC_TURNSTILE_SITE_KEY
+
 # Build the Nitro Node server (pages are prerendered, /api/* stays dynamic)
 COPY . .
 RUN npm run build

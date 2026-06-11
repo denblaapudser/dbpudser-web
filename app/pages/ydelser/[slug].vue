@@ -144,10 +144,10 @@ useHead({
 
                 <template #footer>
                   <div class="space-y-3">
-                    <UButton color="primary" size="xl" block trailing-icon="i-lucide-arrow-right" @click="openQuote(slug)">
+                    <UButton class="px-10 py-5 font-bold" color="primary" size="xl" block trailing-icon="i-lucide-arrow-right" @click="openQuote(slug)">
                       Få et uforpligtende tilbud
                     </UButton>
-                    <UButton variant="outline" color="neutral" size="lg" block leading-icon="i-lucide-message-square" @click="openContact()">
+                    <UButton class="px-10 py-5" variant="outline" color="neutral" size="lg" block leading-icon="i-lucide-message-square" @click="openContact()">
                       Kontakt os
                     </UButton>
                   </div>

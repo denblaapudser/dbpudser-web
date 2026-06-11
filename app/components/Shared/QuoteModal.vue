@@ -12,11 +12,11 @@ const submitting = ref(false)
 const turnstile = ref<{ reset: () => void } | null>(null)
 
 const steps = [
+  { key: 'address', label: 'Adresse', icon: 'i-lucide-map-pin' },
   { key: 'service', label: 'Ydelse', icon: 'i-lucide-sparkles' },
   { key: 'customer', label: 'Kundetype', icon: 'i-lucide-users' },
   { key: 'scope', label: 'Omfang', icon: 'i-lucide-ruler' },
   { key: 'frequency', label: 'Hyppighed', icon: 'i-lucide-calendar-clock' },
-  { key: 'address', label: 'Adresse', icon: 'i-lucide-map-pin' },
   { key: 'contact', label: 'Kontakt', icon: 'i-lucide-user' }
 ]
 
@@ -63,6 +63,52 @@ const form = reactive<QuoteForm>({
   message: ''
 })
 
+// ── DAWA address autocomplete (api.dataforsyningen.dk) ──────────────────────
+interface DawaItem {
+  tekst: string
+  adresse: {
+    vejnavn: string
+    husnr: string
+    etage?: string | null
+    dør?: string | null
+    postnr: string
+    postnrnavn: string
+  }
+}
+
+const addressSearch = ref('')
+const addressItems = ref<DawaItem[]>([])
+const addressLoading = ref(false)
+const selectedAddress = ref<DawaItem>()
+let addressDebounce: ReturnType<typeof setTimeout> | undefined
+
+watch(addressSearch, (q) => {
+  clearTimeout(addressDebounce)
+  if (!q || q.trim().length < 3) {
+    addressItems.value = []
+    return
+  }
+  addressLoading.value = true
+  addressDebounce = setTimeout(async () => {
+    try {
+      addressItems.value = await $fetch<DawaItem[]>('https://api.dataforsyningen.dk/adresser/autocomplete', { query: { q } })
+    } catch {
+      addressItems.value = []
+    } finally {
+      addressLoading.value = false
+    }
+  }, 300)
+})
+
+watch(selectedAddress, (item) => {
+  if (!item) return
+  const a = item.adresse
+  const unit = [a.etage ? `${a.etage}.` : '', a.dør].filter(Boolean).join(' ')
+  form.street = `${a.vejnavn} ${a.husnr}${unit ? ` ${unit}` : ''}`.trim()
+  form.zip = a.postnr
+  form.city = a.postnrnavn
+})
+
 function resetForm() {
   step.value = 0
   submitted.value = false
@@ -81,6 +127,9 @@ function resetForm() {
     phone: '',
     message: ''
   })
+  selectedAddress.value = undefined
+  addressSearch.value = ''
+  addressItems.value = []
 }
 
 watch(isOpen, (open) => {
@@ -99,14 +148,16 @@ const priceLabel = computed(() => `${formatPrice(price.value)}${perVisit.value ?
 
 const emailValid = computed(() => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email))
 
+const currentStep = computed(() => steps[step.value]?.key)
+
 const canProceed = computed(() => {
-  switch (step.value) {
-    case 0: return form.services.length > 0
-    case 1: return !!form.customerType
-    case 2: return !!form.homeType && !!form.floors
-    case 3: return !!form.frequency
-    case 4: return !!form.street && !!form.zip && !!form.city
-    case 5: return !!form.name && emailValid.value && !!form.phone && (!turnstileRequired.value || !!token.value)
+  switch (currentStep.value) {
+    case 'address': return !!form.street && !!form.zip && !!form.city
+    case 'service': return form.services.length > 0
+    case 'customer': return !!form.customerType
+    case 'scope': return !!form.homeType && !!form.floors
+    case 'frequency': return !!form.frequency
+    case 'contact': return !!form.name && emailValid.value && !!form.phone && (!turnstileRequired.value || !!token.value)
     default: return true
   }
 })
@@ -206,7 +257,7 @@ const serviceLabel = (slug: string) => services.find(s => s.slug === slug)?.labe
         <!-- Steps -->
         <div v-else class="flex-1 overflow-y-auto p-6">
           <!-- 0 · Ydelse -->
-          <div v-if="step === 0">
+          <div v-if="currentStep === 'service'">
             <h3 class="mb-1 text-base font-semibold text-gray-900">Hvilke ydelser er du interesseret i?</h3>
             <p class="mb-5 text-sm text-gray-500">Vælg en eller flere.</p>
             <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -225,7 +276,7 @@ const serviceLabel = (slug: string) => services.find(s => s.slug === slug)?.labe
           </div>
 
           <!-- 1 · Kundetype -->
-          <div v-else-if="step === 1">
+          <div v-else-if="currentStep === 'customer'">
             <h3 class="mb-5 text-base font-semibold text-gray-900">Er du privat eller erhverv?</h3>
             <div class="grid grid-cols-2 gap-3">
               <button
@@ -242,7 +293,7 @@ const serviceLabel = (slug: string) => services.find(s => s.slug === slug)?.labe
           </div>
 
           <!-- 2 · Omfang -->
-          <div v-else-if="step === 2" class="space-y-6">
+          <div v-else-if="currentStep === 'scope'" class="space-y-6">
             <div>
               <h3 class="mb-4 text-base font-semibold text-gray-900">Hvilken boligtype?</h3>
               <div class="grid grid-cols-2 gap-3">
@@ -276,7 +327,7 @@ const serviceLabel = (slug: string) => services.find(s => s.slug === slug)?.labe
           </div>
 
           <!-- 3 · Hyppighed -->
-          <div v-else-if="step === 3">
+          <div v-else-if="currentStep === 'frequency'">
             <h3 class="mb-5 text-base font-semibold text-gray-900">Hvor ofte ønsker du ydelsen?</h3>
             <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <button
@@ -294,23 +345,40 @@ const serviceLabel = (slug: string) => services.find(s => s.slug === slug)?.labe
           </div>
 
           <!-- 4 · Adresse -->
-          <div v-else-if="step === 4" class="space-y-4">
+          <div v-else-if="currentStep === 'address'" class="space-y-4">
             <h3 class="text-base font-semibold text-gray-900">Hvor skal opgaven udføres?</h3>
-            <UFormField label="Adresse">
-              <UInput v-model="form.street" placeholder="Vej og husnummer" size="lg" class="w-full" />
+            <UFormField label="Adresse" hint="Søg og vælg din adresse">
+              <USelectMenu
+                v-model="selectedAddress"
+                v-model:search-term="addressSearch"
+                :items="addressItems"
+                :loading="addressLoading"
+                ignore-filter
+                label-key="tekst"
+                icon="i-lucide-map-pin"
+                placeholder="Søg din adresse…"
+                size="lg"
+                class="w-full"
+                :search-input="{ placeholder: 'Skriv mindst 3 tegn…', icon: 'i-lucide-search' }"
+              >
+                <template #empty>
+                  {{ addressSearch.trim().length < 3 ? 'Skriv mindst 3 tegn' : 'Ingen adresser fundet' }}
+                </template>
+              </USelectMenu>
             </UFormField>
-            <div class="grid grid-cols-3 gap-4">
+
+            <div v-if="form.street" class="grid grid-cols-3 gap-4">
               <UFormField label="Postnr." class="col-span-1">
-                <UInput v-model="form.zip" placeholder="5683" size="lg" class="w-full" />
+                <UInput v-model="form.zip" size="lg" class="w-full" disabled />
               </UFormField>
               <UFormField label="By" class="col-span-2">
-                <UInput v-model="form.city" placeholder="Haarby" size="lg" class="w-full" />
+                <UInput v-model="form.city" size="lg" class="w-full" disabled />
               </UFormField>
             </div>
           </div>
 
           <!-- 5 · Kontakt + opsummering -->
-          <div v-else-if="step === 5" class="space-y-5">
+          <div v-else-if="currentStep === 'contact'" class="space-y-5">
             <div class="rounded-xl bg-slate-900 p-5">
               <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Estimeret pris</p>
               <p class="mt-1 text-2xl font-bold text-white">{{ priceLabel }}</p>
@@ -348,7 +416,7 @@ const serviceLabel = (slug: string) => services.find(s => s.slug === slug)?.labe
           <span v-else />
 
           <div class="flex items-center gap-4">
-            <span v-if="step >= 2 && price > 0" class="hidden text-sm text-gray-500 sm:block">
+            <span v-if="price > 0" class="hidden text-sm text-gray-500 sm:block">
               Est. <strong class="text-gray-900">{{ priceLabel }}</strong>
             </span>
             <UButton

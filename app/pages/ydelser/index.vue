@@ -10,6 +10,11 @@ const sortedServices = computed(() => {
 })
 
 useScrollReveal()
+
+useSeo({
+  title: 'Ydelser – vinduespolering, solcellevask & facaderens',
+  description: 'Se alle vores ydelser inden for udvendig rengøring: vinduespolering, solcellevask, fliserens samt algebehandling af tag og facade. Professionelt udført på Fyn og omegn.'
+})
 </script>
 
 <template>

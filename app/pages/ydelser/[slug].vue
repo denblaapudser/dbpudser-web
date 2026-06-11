@@ -18,6 +18,43 @@ const breadcrumbs = computed(() => [
 ])
 
 useScrollReveal()
+
+const { public: { siteUrl } } = useRuntimeConfig()
+const base = siteUrl.replace(/\/$/, '')
+
+useSeo({
+  title: `${service.value!.title} på Fyn`,
+  description: service.value!.description,
+  image: service.value!.image
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Service',
+          name: service.value!.title,
+          serviceType: service.value!.title,
+          description: service.value!.description,
+          provider: { '@id': `${base}/#business` },
+          areaServed: ['Fyn', 'Odense', 'Trekantområdet', 'København'].map(name => ({ '@type': 'Place', name })),
+          url: `${base}/ydelser/${slug}`
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Hjem', item: `${base}/` },
+            { '@type': 'ListItem', position: 2, name: 'Ydelser', item: `${base}/ydelser` },
+            { '@type': 'ListItem', position: 3, name: service.value!.title, item: `${base}/ydelser/${slug}` }
+          ]
+        }
+      ]
+    })
+  }]
+})
 </script>
 
 <template>

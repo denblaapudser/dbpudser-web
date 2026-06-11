@@ -45,7 +45,7 @@ const sharedServices: ServiceItem[] = [
 
 const frontpage: FrontpageData = {
   hero: {
-    description: 'Vi leverer professionel vinduespudsning, algebehandling og tagrens til private og erhverv.',
+    description: 'Vi leverer professionel vinduespolering, solcellevask, fliserens, algebehandling og meget mere til private og erhverv – på Fyn, i Trekantområdet og dele af København.',
     videoUrl: '/videos/intro.mp4',
     imageUrl: '/img/frontpagehero.webp',
     benefits: [
@@ -84,7 +84,7 @@ const services: ServicesPageData = {
 const about: AboutPageData = {
   description: 'Vi er et dedikeret team med mange års erfaring inden for udvendig rengøring. Vores mission er at levere resultater, der taler for sig selv — hver gang.',
   image: '/img/om-os.webp',
-  story: 'DBPUDSER blev grundlagt i 2006 med en simpel vision: at levere den bedste udvendige rengøring på Fyn. Gennem årene har vi opbygget et stærkt team af dedikerede fagfolk, der deler vores passion for kvalitet og kundetilfredshed. Vi startede med vinduespolering og har siden udvidet vores ydelser til at dække alt inden for udvendig rengøring — fra solcellevask og fliserens til algebehandling af tage og facader. I dag betjener vi både private og erhvervskunder i hele Fyn, Trekantområdet og dele af København.',
+  story: 'Flemming René Vinduespolering blev grundlagt i 2006 med en simpel vision: at levere den bedste udvendige rengøring på Fyn. Gennem årene har vi opbygget et stærkt team af dedikerede fagfolk, der deler vores passion for kvalitet og kundetilfredshed. Vi startede med vinduespolering og har siden udvidet vores ydelser til at dække alt inden for udvendig rengøring — fra solcellevask og fliserens til algebehandling af tage og facader. I dag betjener vi både private og erhvervskunder i hele Fyn, Trekantområdet og dele af København.',
   stats: [
     { value: '2006', label: 'Etableret' },
     { value: '8', label: 'Medarbejdere' },

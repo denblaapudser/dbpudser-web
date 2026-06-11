@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { contact } = useSiteConfig()
+const { company, contact } = useSiteConfig()
 
 const qualifications = [
   'Du er dygtig til dit fag og har minimum 5 års erfaring med vinduespudsning – der arbejdes både med vaskeanlæg og pudsning i hånden.',
@@ -18,6 +18,11 @@ const benefits = [
 ]
 
 const applyHref = `${contact.emailHref}?subject=Job-Vinduespudser`
+
+useSeo({
+  title: 'Job: Vinduespudser søges',
+  description: 'Vi søger en dygtig vinduespudser til opstart hurtigst muligt. Fastansættelse, firmabil, god løn med pension og fokus på trivsel. Søg jobbet hos Flemming René Vinduespolering på Fyn.'
+})
 
 useScrollReveal()
 </script>
@@ -159,7 +164,7 @@ useScrollReveal()
             </a>
             <p class="mt-3 flex items-start gap-3 text-sm text-gray-600">
               <UIcon name="i-lucide-map-pin" class="mt-0.5 size-4 shrink-0 text-primary-600" />
-              <span>Flemming René Vinduespolering<br>Bøgevej 14, 5683 Haarby</span>
+              <span>{{ company.name }}<br>{{ contact.street }}, {{ contact.city }}</span>
             </p>
           </UCard>
         </div>

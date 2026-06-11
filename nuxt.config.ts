@@ -15,6 +15,16 @@ export default defineNuxtConfig({
     colorMode: false
   },
 
+  app: {
+    head: {
+      htmlAttrs: { lang: 'da' },
+      meta: [
+        { name: 'theme-color', content: '#0f172a' },
+        { property: 'og:locale', content: 'da_DK' }
+      ]
+    }
+  },
+
   // Only generate the styles we actually use (no italics)
   fonts: {
     defaults: {

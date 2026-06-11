@@ -5,6 +5,8 @@ defineProps<{
   description: string
   benefits: HeroBenefit[]
 }>()
+
+const { company } = useSiteConfig()
 </script>
 
 <template>
@@ -13,7 +15,7 @@ defineProps<{
     <div class="hero-reveal mb-6 flex items-center gap-3" style="--reveal-delay: 0.1s">
       <span class="h-px w-8 bg-primary-400" />
       <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-400">
-        Professionel rengøring
+        {{ company.slogan }}
       </span>
     </div>
 
@@ -22,14 +24,13 @@ defineProps<{
       class="hero-reveal mb-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
       style="--reveal-delay: 0.25s"
     >
-      Krystalklart
-      <span class="text-primary-400">resultat</span>,<br>
-      hver gang
+      Vinduespolering med<br>
+      <span class="text-primary-400">krystalklart</span> resultat
     </h1>
 
     <!-- Description -->
     <p
-      class="hero-reveal mb-8 max-w-lg text-lg leading-relaxed text-neutral-300"
+      class="hero-reveal mb-8 max-w-2xl max-w-2xl leading-relaxed text-neutral-300"
       style="--reveal-delay: 0.4s"
     >
       {{ description }}

@@ -11,7 +11,7 @@ defineProps<{
   <div class="scroll-reveal relative" style="transition-delay: 0.1s">
     <img
       :src="image"
-      alt="DB Pudser teamet"
+      alt="Flemming René Vinduespolering – teamet på Fyn"
       loading="lazy"
       class="relative w-full rounded-2xl object-cover shadow-xl"
     >

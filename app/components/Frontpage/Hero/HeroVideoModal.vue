@@ -3,6 +3,7 @@ defineProps<{
   videoUrl: string
 }>()
 
+const { company } = useSiteConfig()
 const open = defineModel<boolean>('open', { required: true })
 const modalVideoRef = ref<HTMLVideoElement | null>(null)
 
@@ -24,7 +25,7 @@ watch(open, (isOpen) => {
   <UModal
     v-model:open="open"
     fullscreen
-    title="DBPUDSER intro video"
+    :title="`${company.name} intro video`"
     :ui="{ content: 'bg-transparent ring-0 shadow-none backdrop-blur-sm', overlay: 'bg-black/80 backdrop-blur-sm' }"
   >
     <slot />

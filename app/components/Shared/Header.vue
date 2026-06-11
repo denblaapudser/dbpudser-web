@@ -45,17 +45,13 @@ const items: NavigationMenuItem[] = [
     :ui="{
       root: 'transition-all duration-300',
       right: 'gap-4',
-      title: ['flex items-center gap-2 text-lg/5 md:text-xl/5 uppercase font-normal text-white/80', scrolled && '!text-gray-900'],
+      title: ['text-white/80', scrolled && '!text-gray-900'],
       content: 'w-[20rem] max-w-[85vw]',
       header: '[&_[data-slot=title]>div]:hidden [&_.header-bar-only]:hidden'
     }"
   >
     <template #title>
-      <img src="/img/favicon.png" alt="Flemming René Favicon" class="h-10 w-auto mr-2 inline-block" />
-      <div>
-        <span class="text-[1.3rem] md:text-[1.44rem] block">Flemming René</span>
-        <span class="block text-primary">Vinduespolering</span>
-      </div>
+      <SharedLogo />
     </template>
 
     <template #right>

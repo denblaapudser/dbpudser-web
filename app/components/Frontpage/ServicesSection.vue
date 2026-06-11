@@ -29,7 +29,7 @@ useScrollReveal()
 
     <template #title>
       Alt inden for
-      <span class="text-primary-600">udvendig rengøring</span>
+      <span class="text-primary-600">facade- og vinduespleje</span>
     </template>
 
     <template #body>

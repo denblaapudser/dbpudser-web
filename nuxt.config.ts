@@ -15,6 +15,13 @@ export default defineNuxtConfig({
     colorMode: false
   },
 
+  // Only generate the styles we actually use (no italics)
+  fonts: {
+    defaults: {
+      styles: ['normal']
+    }
+  },
+
   runtimeConfig: {
     // Server-only secrets (set via NUXT_* env vars in production)
     turnstileSecretKey: '',

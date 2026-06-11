@@ -2,17 +2,15 @@
 
 # --- Build stage ---
 FROM node:22-alpine AS build
-ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
-RUN corepack enable
 WORKDIR /app
 
-# Install dependencies (cached unless lockfile changes)
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+# Install dependencies (cached unless the lockfile changes)
+COPY package.json package-lock.json ./
+RUN npm ci
 
 # Build the Nitro Node server (pages are prerendered, /api/* stays dynamic)
 COPY . .
-RUN pnpm run build
+RUN npm run build
 
 # --- Runtime stage ---
 FROM node:22-alpine AS runtime

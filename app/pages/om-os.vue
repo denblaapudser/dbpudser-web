@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const { data: page } = await usePageContent('about')
 
+useSeo({
+  title: 'Om os',
+  description: 'Flemming René Vinduespolering blev grundlagt i 2006. Mød teamet bag professionel udvendig rengøring på Fyn – med fokus på kvalitet, stabilitet og loyalitet.',
+  image: '/img/om-os.webp'
+})
+
 useScrollReveal()
 </script>
 

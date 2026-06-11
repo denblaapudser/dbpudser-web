@@ -8,6 +8,8 @@ defineProps<{
   benefits: AboutBenefit[]
 }>()
 
+const { contact } = useSiteConfig()
+
 useScrollReveal()
 </script>
 
@@ -50,8 +52,8 @@ useScrollReveal()
       <UButton size="lg" color="primary" trailing-icon="i-lucide-arrow-right">
         Kontakt os
       </UButton>
-      <UButton size="lg" color="neutral" variant="subtle" leading-icon="i-lucide-phone" to="tel:40829240">
-        40 82 92 40
+      <UButton size="lg" color="neutral" variant="subtle" leading-icon="i-lucide-phone" :to="contact.phoneHref">
+        {{ contact.phone }}
       </UButton>
     </template>
   </UPageSection>

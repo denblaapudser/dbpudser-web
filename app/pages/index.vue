@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const { data: page } = await usePageContent('frontpage')
+
+useSeo({
+  title: 'Vinduespudser på Fyn',
+  description: 'Professionel vinduespolering, solcellevask, fliserens og algebehandling på Fyn, i Trekantområdet og dele af København. Få et uforpligtende tilbud hos Flemming René – kvalitet, stabilitet og loyalitet siden 2006.'
+})
 </script>
 
 <template>

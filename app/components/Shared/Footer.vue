@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FooterColumn } from '@nuxt/ui'
 
-const { services, contact } = useSiteConfig()
+const { company, services, contact } = useSiteConfig()
 
 const columns: FooterColumn[] = [
   {
@@ -33,19 +33,19 @@ const columns: FooterColumn[] = [
     :ui="{
       root: 'dark bg-gray-950',
       top: 'py-16',
-      container: 'py-6'
+      container: 'py-6',
     }"
   >
     <template #top>
       <USeparator :ui="{ border: 'border-white/10' }" />
 
       <UContainer class="py-16">
-        <UFooterColumns :columns="columns">
+        <UFooterColumns :columns="columns" :ui="{label: 'text-white'}">
           <template #left>
             <div class="flex flex-col gap-4">
-              <span class="text-2xl font-bold text-white">DBPUDSER</span>
+              <SharedLogo class="text-white"/>
               <p class="text-sm text-gray-400">
-                Kvalitet · Stabilitet · Loyalitet
+                {{ company.slogan }}
               </p>
               <p class="text-sm text-gray-400 max-w-xs">
                 Professionel vinduespolering og udvendig rengøring på Fyn, Trekantområdet og dele af København.
@@ -59,8 +59,8 @@ const columns: FooterColumn[] = [
     </template>
 
     <template #left>
-      <p class="text-sm text-gray-500">
-        &copy; {{ new Date().getFullYear() }} DBPUDSER. Alle rettigheder forbeholdes.
+      <p class="text-sm text-gray-400">
+        &copy; {{ new Date().getFullYear() }} {{ company.name }}. Alle rettigheder forbeholdes.
       </p>
     </template>
 
@@ -69,7 +69,7 @@ const columns: FooterColumn[] = [
         icon="i-simple-icons-facebook"
         color="neutral"
         variant="ghost"
-        to="https://www.facebook.com/Flemming-Rene-Vinduespolering/"
+        :to="company.social.facebook"
         target="_blank"
         aria-label="Facebook"
       />
@@ -77,7 +77,7 @@ const columns: FooterColumn[] = [
         icon="i-simple-icons-youtube"
         color="neutral"
         variant="ghost"
-        to="https://youtu.be/kMPSAQV5r0s"
+        :to="company.social.youtube"
         target="_blank"
         aria-label="YouTube"
       />

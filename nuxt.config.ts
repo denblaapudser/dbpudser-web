@@ -39,6 +39,11 @@ export default defineNuxtConfig({
     }
   },
 
+  // Long cache for static images (stable filenames — rename or purge on change)
+  routeRules: {
+    '/img/**': { headers: { 'cache-control': 'public, max-age=31536000' } }
+  },
+
   // Prerender all pages at build time (static-fast), while the Node server
   // still handles dynamic routes like /api/lead.
   nitro: {

@@ -42,7 +42,7 @@ const { openQuote } = useQuoteModal()
       class="hero-reveal mb-10 flex flex-wrap items-center gap-5"
       style="--reveal-delay: 0.55s"
     >
-      <UButton class="sm:py-4 sm:px-7" size="xl" color="primary" @click="openQuote()">
+      <UButton class="sm:py-4 sm:px-13" size="xl" color="primary" @click="openQuote()">
         Få et tilbud
       </UButton>
 

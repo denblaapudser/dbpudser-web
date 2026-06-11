@@ -46,6 +46,19 @@ const CUSTOMER_FACTOR: Record<string, number> = {
   erhverv: 1.25
 }
 
+/**
+ * Travel surcharge by postal-code region, relative to the Fyn base (Haarby).
+ * Farther jobs cost a bit more. ⚠️ PLACEHOLDER — adjust to real rates.
+ */
+function areaFactor(zip?: string): number {
+  const n = Number(zip)
+  if (!n) return 1
+  if (n >= 5000 && n <= 5999) return 1 // Fyn (lokal base)
+  if (n >= 6000 && n <= 7199) return 1.1 // Trekantområdet / Sønderjylland
+  if (n >= 7200 && n <= 9999) return 1.2 // Øvrige Jylland
+  return 1.3 // Sjælland / København (1000–4999)
+}
+
 /** Returns the indicative price in DKK, rounded to the nearest 10. */
 export function estimatePrice(form: QuoteForm): number {
   if (!form.services.length) return 0
@@ -56,8 +69,9 @@ export function estimatePrice(form: QuoteForm): number {
   const floorFactor = 1 + (floorsNum - 1) * 0.2
   const frequency = FREQUENCY_FACTOR[form.frequency ?? ''] ?? 1
   const customer = CUSTOMER_FACTOR[form.customerType ?? ''] ?? 1
+  const area = areaFactor(form.zip)
 
-  const raw = base * home * floorFactor * frequency * customer
+  const raw = base * home * floorFactor * frequency * customer * area
   return Math.round(raw / 10) * 10
 }
 

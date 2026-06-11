@@ -56,7 +56,7 @@ async function onSubmit(event: FormSubmitEvent<State>) {
   <USlideover
     v-model:open="isOpen"
     :ui="{
-      content: 'max-w-lg',
+      content: 'w-[20rem] max-w-[85vw]',
       header: 'bg-slate-900 p-6',
       close: 'text-slate-400 hover:text-white',
     }"

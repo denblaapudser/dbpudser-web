@@ -5,6 +5,20 @@ const { openContact } = useContactSlideover()
 const { openQuote } = useQuoteModal()
 const { services } = useSiteConfig()
 
+const menuOpen = ref(false)
+
+// Close the mobile menu before opening another overlay, so it doesn't
+// sit on top of the modal/slideover.
+function openQuoteFromMenu() {
+  menuOpen.value = false
+  openQuote()
+}
+
+function openContactFromMenu() {
+  menuOpen.value = false
+  openContact()
+}
+
 const scrolled = ref(false)
 
 function onScroll() {
@@ -37,6 +51,7 @@ const items: NavigationMenuItem[] = [
 
 <template>
   <UHeader
+    v-model:open="menuOpen"
     mode="slideover"
     :class="[
         {'dark h-25 bg-transparent border-none backdrop-filter-none': !scrolled },
@@ -77,8 +92,8 @@ const items: NavigationMenuItem[] = [
         color="neutral"
       />
       <div class="mt-6 flex flex-col gap-3">
-        <UButton block color="primary" @click="openQuote()">Få et tilbud</UButton>
-        <UButton block variant="outline" color="neutral" @click="openContact()">Kontakt os</UButton>
+        <UButton block color="primary" @click="openQuoteFromMenu()">Få et tilbud</UButton>
+        <UButton block variant="outline" color="neutral" @click="openContactFromMenu()">Kontakt os</UButton>
       </div>
     </template>
   </UHeader>

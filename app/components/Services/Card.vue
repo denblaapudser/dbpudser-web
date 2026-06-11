@@ -16,6 +16,7 @@ defineProps<{
     <img
       :src="image"
       alt=""
+      loading="lazy"
       class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
     >
     <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-gray-950/30 transition-opacity duration-300 group-hover:opacity-90" />

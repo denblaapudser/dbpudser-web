@@ -12,6 +12,7 @@ defineProps<{
     <img
       :src="image"
       alt="DB Pudser teamet"
+      loading="lazy"
       class="relative w-full rounded-2xl object-cover shadow-xl"
     >
     <div class="absolute -bottom-6 left-6 right-6 grid grid-cols-4 gap-3 rounded-xl border border-gray-200 bg-white/90 p-4 shadow-lg backdrop-blur-sm">

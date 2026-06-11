@@ -35,6 +35,7 @@ useScrollReveal()
             :key="file"
             :src="`/img/references/${file}`"
             :alt="file.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ')"
+            loading="lazy"
             class="h-42 w-auto shrink-0 object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
           >
         </UMarquee>
